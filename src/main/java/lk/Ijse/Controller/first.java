@@ -68,6 +68,8 @@ public class first {
         if (b){
             new Alert(Alert.AlertType.CONFIRMATION,"Customer saved").show();
         }
+        setValues();
+        loadValues();
 
         }
 
@@ -81,6 +83,7 @@ public class first {
             observableList.add(customerTable);
             Table.setItems(observableList);
         }
+
     }
     public void setValues(){
         Id.setCellValueFactory(new PropertyValueFactory<>("CID"));
