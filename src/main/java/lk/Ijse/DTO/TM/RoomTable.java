@@ -7,11 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CustomerTable {
-    private String CID;
-    private String CName;
-    private String CAddress;
-    private String CMobile;
-
-
+public class RoomTable {
+    private String roomId;
+    private String roomType;
+    private String roomPrice;
 }
