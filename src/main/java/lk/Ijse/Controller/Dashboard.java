@@ -6,10 +6,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
-public class Dashboard {
+public class Dashboard implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -38,4 +39,15 @@ public class Dashboard {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Parent root =null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ancpane.getChildren().clear();
+        ancpane.getChildren().add(root);
+    }
 }
