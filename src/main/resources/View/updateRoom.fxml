@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="286.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.Controller.UpdateRoom">
+   <children>
+      <TextField fx:id="id" layoutX="86.0" layoutY="76.0" promptText="id" style="-fx-background-radius: 40;" />
+      <TextField fx:id="type" layoutX="86.0" layoutY="110.0" promptText="type" style="-fx-background-radius: 40;" />
+      <TextField fx:id="price" layoutX="86.0" layoutY="142.0" promptText="price" style="-fx-background-radius: 40;" />
+      <Button layoutX="76.0" layoutY="201.0" mnemonicParsing="false" onAction="#cancelOnActin" prefHeight="34.0" prefWidth="68.0" text="Cancel" />
+      <Button layoutX="176.0" layoutY="201.0" mnemonicParsing="false" onAction="#adddOnAction" prefHeight="34.0" prefWidth="68.0" text="Add" />
+   </children>
+</AnchorPane>

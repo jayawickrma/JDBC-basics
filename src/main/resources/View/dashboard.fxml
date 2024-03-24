@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.Controller.Dashboard">
    <children>
-      <AnchorPane prefHeight="650.0" prefWidth="238.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="693.0" prefWidth="240.0" style="-fx-background-color: black;">
          <children>
             <Button layoutY="224.0" mnemonicParsing="false" onAction="#btnCustomerMange" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="CUSTOMER MANAGE" textFill="#ebebeb">
                <font>

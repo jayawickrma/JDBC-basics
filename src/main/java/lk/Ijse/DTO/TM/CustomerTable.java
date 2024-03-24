@@ -12,6 +12,4 @@ public class CustomerTable {
     private String CName;
     private String CAddress;
     private String CMobile;
-
-
 }

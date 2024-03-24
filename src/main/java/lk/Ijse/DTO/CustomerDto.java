@@ -12,6 +12,4 @@ public class CustomerDto {
     private String CNAme;
     private String CAddress;
     private String CMobile;
-
-
 }

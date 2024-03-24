@@ -11,5 +11,4 @@ public class RoomDto {
     private int roomId;
     private String roomType;
     private String roomPrice;
-
 }

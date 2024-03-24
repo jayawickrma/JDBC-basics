@@ -57,4 +57,21 @@ public class CustomerModel {
         }
         return customerDtos;
     }
+    public static boolean updateCustomer(CustomerDto customerDto) throws SQLException {
+        try {
+            Connection connection = dbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("update customer set CID=?,CName=?,CAddress=?,CMobile=? ");
+            preparedStatement.setInt(1,customerDto.getCID());
+            preparedStatement.setString(2,customerDto.getCNAme());
+            preparedStatement.setString(3,customerDto.getCAddress());
+            preparedStatement.setString(4,customerDto.getCMobile());
+
+            int i =preparedStatement.executeUpdate();
+            return  i>0;
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

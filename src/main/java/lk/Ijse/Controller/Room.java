@@ -1,21 +1,29 @@
 package lk.Ijse.Controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 import lk.Ijse.DTO.RoomDto;
 import lk.Ijse.DTO.TM.RoomTable;
 import lk.Ijse.Model.RoomModel;
+
+import javax.imageio.IIOException;
 
 public class Room {
 
@@ -33,6 +41,11 @@ public class Room {
 
     @FXML
     private TextField TYPETXT;
+    @FXML
+    private TableColumn<RoomTable, JFXButton> rDelete;
+
+    @FXML
+    private TableColumn<RoomTable, JFXButton> rUpdate;
 
     @FXML
     private TableColumn<RoomTable, String> rid;
@@ -63,25 +76,62 @@ public class Room {
         }
 
 LoadValues();
-setvalues();
+
     }
-    public void LoadValues(){
-        ArrayList<RoomDto>allRooms=RoomModel.getAllRoom();
+    public void LoadValues() {
+        ArrayList<RoomDto> allRooms = RoomModel.getAllRoom();
         System.out.println(allRooms.size());
-        ObservableList<RoomTable>observableList= FXCollections.observableArrayList();
-        for (int i=0 ;i<allRooms.size();i++){
-            String RID=String.valueOf(allRooms.get(i).getRoomId());
-            RoomTable roomTable=new RoomTable(RID,allRooms.get(i).getRoomType(),allRooms.get(i).getRoomPrice());
+        ObservableList<RoomTable> observableList = FXCollections.observableArrayList();
+        for (int i = 0; i < allRooms.size(); i++) {
+            String RID = String.valueOf(allRooms.get(i).getRoomId());
+            RoomTable roomTable = new RoomTable(RID, allRooms.get(i).getRoomType(), allRooms.get(i).getRoomPrice(), new JFXButton("Update"), new JFXButton("Delete"));
             observableList.add(roomTable);
-           rtable.setItems(observableList);
+
         }
+        rtable.setItems(observableList);
+        for (int i = 0; i < observableList.size(); i++) {
+            observableList.get(i).getUpdateRoom().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
+            observableList.get(i).getDeleteRoom().setStyle("-fx-background-color: rgba(175,108,108,1)");
+            observableList.get(i).getUpdateRoom().setTextFill(Color.WHITE);
+            observableList.get(i).getDeleteRoom().setTextFill(Color.WHITE);
+        }
+        for (int i = 0; i < observableList.size(); i++) {
+            String id = observableList.get(i).getRoomId();
+            String type=observableList.get(i).getRoomType();
+            String price=observableList.get(i).getRoomPrice();
+            observableList.get(i).getUpdateRoom().setOnAction(actionEvent -> {
+            UpdateRoom.
+//
+//
+//
+//
+//                    need to do
+//
+//
+//
+//
+//
+//
+//
+            }
+                try {
+                    Parent parent= FXMLLoader.load(getClass().getResource("/View/updateCustomer.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+        });
+
     }
-    public void setvalues(){
-     rid.setCellValueFactory(new PropertyValueFactory<>("roomId"));
-     rtype.setCellValueFactory(new PropertyValueFactory<>("roomType"));
-     rprice.setCellValueFactory(new PropertyValueFactory<>("roomPrice"));
-     LoadValues();
-    }
+        public void setvalues() {
+            rid.setCellValueFactory(new PropertyValueFactory<>("roomId"));
+            rtype.setCellValueFactory(new PropertyValueFactory<>("roomType"));
+            rprice.setCellValueFactory(new PropertyValueFactory<>("roomPrice"));
+            rUpdate.setCellValueFactory(new PropertyValueFactory<RoomTable,JFXButton>("updateRoom"));
+            rDelete.setCellValueFactory(new PropertyValueFactory<RoomTable,JFXButton>("deleteRoom"));
+            LoadValues();
+        }
+
+
 
     @FXML
     void initialize() {

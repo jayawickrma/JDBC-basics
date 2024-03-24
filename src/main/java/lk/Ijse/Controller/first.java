@@ -83,8 +83,15 @@ public class first {
             observableList.add(customerTable);
             Table.setItems(observableList);
         }
+        for (int i = 0; i < observableList.size(); i++) {
+            String id = observableList.get(i).getCID();
+            String name=observableList.get(i).getCName();
+            String address=observableList.get(i).getCAddress();
+            String mobile=observableList.get(i).getCMobile();
 
+        }
     }
+
     public void setValues(){
         Id.setCellValueFactory(new PropertyValueFactory<>("CID"));
         Name.setCellValueFactory(new PropertyValueFactory<>("CName"));

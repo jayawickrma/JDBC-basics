@@ -43,4 +43,17 @@ public class RoomModel {
         }
     return false;
     }
+    public static boolean updateRoom(RoomDto roomDto){
+        try {
+            Connection connection =dbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("update room set roomType=?,roomPrice=?");
+            preparedStatement.setString(1,roomDto.getRoomType());
+            preparedStatement.setString(2,roomDto.getRoomPrice());
+            int i=preparedStatement.executeUpdate();
+            return i>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
