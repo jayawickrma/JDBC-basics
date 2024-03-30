@@ -13,17 +13,20 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import lk.Ijse.DTO.RoomDto;
 import lk.Ijse.DTO.TM.RoomTable;
 import lk.Ijse.Model.RoomModel;
 
 import javax.imageio.IIOException;
+
 
 public class Room {
 
@@ -97,30 +100,25 @@ LoadValues();
         }
         for (int i = 0; i < observableList.size(); i++) {
             String id = observableList.get(i).getRoomId();
-            String type=observableList.get(i).getRoomType();
-            String price=observableList.get(i).getRoomPrice();
+            String type = observableList.get(i).getRoomType();
+            String price = observableList.get(i).getRoomPrice();
             observableList.get(i).getUpdateRoom().setOnAction(actionEvent -> {
-            UpdateRoom.
-//
-//
-//
-//
-//                    need to do
-//
-//
-//
-//
-//
-//
-//
-            }
+                UpdateRoom.ID=Integer.parseInt(id);
+                UpdateRoom.Type=type;
+                UpdateRoom.Price=price;
+                Parent parent = null;
                 try {
-                    Parent parent= FXMLLoader.load(getClass().getResource("/View/updateCustomer.fxml"));
+                    parent = FXMLLoader.load(getClass().getResource("/View/updateRoom.fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
-                }
-        });
-
+                } Scene scene = new Scene(parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.setResizable(false);
+                stage.show();
+                LoadValues();
+            });
+        }
     }
         public void setvalues() {
             rid.setCellValueFactory(new PropertyValueFactory<>("roomId"));

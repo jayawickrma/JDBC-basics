@@ -26,9 +26,10 @@ public class UpdateCustomer {
     @FXML
     private TextField name;
 
-    public static int id;
-    public static String type;
-    public static String price;
+    public static int Id;
+    public static String Name;
+    public static String Address;
+    public static String Mobile;
 
     @FXML
     void btnAddOnActon(ActionEvent event) {
