@@ -26,7 +26,11 @@ public class Dashboard implements Initializable {
         Parent parent= FXMLLoader.load(getClass().getResource("/View/1.fxml"));
         ancpane.getChildren().setAll(parent);
     }
-
+    @FXML
+    void btnHOMEMange(ActionEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
+        ancpane.getChildren().setAll(parent);
+    }
     @FXML
     void btnRoommanage(ActionEvent event) throws IOException {
         Parent parent =FXMLLoader.load(getClass().getResource("/View/room.fxml"));

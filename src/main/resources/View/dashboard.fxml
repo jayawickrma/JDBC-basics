@@ -10,11 +10,11 @@
    <children>
       <AnchorPane prefHeight="693.0" prefWidth="240.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutY="224.0" mnemonicParsing="false" onAction="#btnCustomerMange" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="CUSTOMER MANAGE" textFill="#ebebeb">
+            <Button layoutX="3.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnHOMEMange" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="DASH BOARD" textFill="#ebebeb">
                <font>
                   <Font name="Arial Bold" size="20.0" />
                </font></Button>
-            <Button layoutY="277.0" mnemonicParsing="false" onAction="#btnRoommanage" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="ROOM MANAGE" textFill="WHITE">
+            <Button layoutX="5.0" layoutY="320.0" mnemonicParsing="false" onAction="#btnRoommanage" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="ROOM MANAGE" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
@@ -23,6 +23,11 @@
                   <Image url="@../Asserts/360_F_367357209_BG07SVnnB4HSHSaMiHajfZhrZZAE859A.jpg" />
                </image>
             </ImageView>
+            <Button layoutX="5.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnCustomerMange" prefHeight="53.0" prefWidth="240.0" style="-fx-background-color: black;" text="CUSTOMER MANAGE" textFill="#ebebeb">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="ancpane" layoutX="245.0" prefHeight="644.0" prefWidth="1135.0" />
