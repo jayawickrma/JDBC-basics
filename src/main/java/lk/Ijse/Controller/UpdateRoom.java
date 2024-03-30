@@ -7,12 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import lk.Ijse.DTO.RoomDto;
 import lk.Ijse.Model.RoomModel;
 
 public class UpdateRoom {
+    public static int ID;
+    public static String Type;
+    public static String Price;
 
     @FXML
     private ResourceBundle resources;
@@ -38,6 +43,7 @@ public class UpdateRoom {
         RoomDto roomDto=new RoomDto(idt,typet,pricet);
        boolean b= RoomModel.updateRoom(roomDto);
         System.out.println(b);
+
         if (b){
            new Alert(Alert.AlertType.CONFIRMATION,"Room Updated Successfully").show();
         }
@@ -46,7 +52,11 @@ public class UpdateRoom {
             parent= FXMLLoader.load(getClass().getResource("/View/room.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }   Scene scene = new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
 
