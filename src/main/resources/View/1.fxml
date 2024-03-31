@@ -13,16 +13,17 @@
       <TextField fx:id="addressTXt" layoutX="424.0" layoutY="32.0" promptText="address" style="-fx-background-radius: 40;" />
       <TextField fx:id="nameTXT" layoutX="226.0" layoutY="32.0" promptText="name" style="-fx-background-radius: 40;" />
       <Button layoutX="431.0" layoutY="69.0" mnemonicParsing="false" onAction="#btnSaveInACtion" prefHeight="33.0" prefWidth="117.0" style="-fx-background-radius: 40;" text="save" />
-      <TableView fx:id="Table" layoutX="67.0" layoutY="135.0" prefHeight="200.0" prefWidth="690.0">
+      <TableView fx:id="Table" layoutX="70.0" layoutY="139.0" prefHeight="200.0" prefWidth="978.0">
         <columns>
           <TableColumn fx:id="Id" prefWidth="65.0" text="ID" />
           <TableColumn fx:id="Name" prefWidth="129.0" text="Name" />
             <TableColumn fx:id="adress" prefWidth="157.0" text="Address" />
-            <TableColumn fx:id="tel" minWidth="0.0" prefWidth="115.0" text="Mobile Number" />
-            <TableColumn fx:id="update" minWidth="0.0" prefWidth="115.0" text="Update" />
-            <TableColumn fx:id="tel11" minWidth="0.0" prefWidth="115.0" text="Delete" />
+            <TableColumn fx:id="tel" minWidth="0.0" prefWidth="127.0" text="Mobile Number" />
+            <TableColumn fx:id="update" minWidth="0.0" prefWidth="103.0" text="Update" />
             <TableColumn fx:id="delete" minWidth="0.0" prefWidth="115.0" text="Delete" />
+            <TableColumn fx:id="email" minWidth="0.0" prefWidth="281.0" text="E-mail" />
         </columns>
       </TableView>
+      <TextField fx:id="emial" layoutX="608.0" layoutY="32.0" prefHeight="25.0" prefWidth="325.0" promptText="E-mail" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

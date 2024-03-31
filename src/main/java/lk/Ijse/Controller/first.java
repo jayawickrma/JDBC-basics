@@ -2,7 +2,11 @@ package lk.Ijse.Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -24,6 +28,7 @@ import javafx.stage.Stage;
 import lk.Ijse.DTO.CustomerDto;
 import lk.Ijse.DTO.TM.CustomerTable;
 import lk.Ijse.Model.CustomerModel;
+import lk.Ijse.SMTP.mail;
 
 import javax.imageio.IIOException;
 
@@ -42,7 +47,8 @@ public class first {
     private TableColumn<CustomerTable, JFXButton> update;
     @FXML
     private TableColumn<CustomerTable,String> Id;
-
+    @FXML
+    private TableColumn<CustomerTable,String> email;
     @FXML
     private TextField MobileTxt;
 
@@ -63,7 +69,8 @@ public class first {
 
     @FXML
     private TextField nameTXT;
-
+    @FXML
+    private TextField emial;
     @FXML
     private TableColumn<CustomerTable, String> tel;
 
@@ -73,11 +80,23 @@ public class first {
         String nameTXt=nameTXT.getText();
         String addressTXT=addressTXt.getText();
         String mobileTXT=MobileTxt.getText();
+        String emailTXT=emial.getText();
 
-        CustomerDto customerDto =new CustomerDto(idTXT,nameTXt,addressTXT,mobileTXT);
+        CustomerDto customerDto =new CustomerDto(idTXT,nameTXt,addressTXT,mobileTXT,emailTXT);
         boolean b =CustomerModel.saveCustomer(customerDto);
         System.out.println(b);
         if (b){
+            mail mail = new mail();
+            mail.setMsg("Hello !!! now you are a customer of food Court resturant"+
+                    "\nTime : " +
+                    Time.valueOf(LocalTime.now()) + "\n" +
+                    "Date : " +
+                    Date.valueOf(LocalDate.now()));//email message
+            mail.setTo(emial.getText()); //receiver's mail
+            mail.setSubject("Alert"); //email subject
+
+            Thread thread = new Thread(mail);
+            thread.start();
             new Alert(Alert.AlertType.CONFIRMATION,"Customer saved").show();
         }
         setValues();
@@ -91,7 +110,7 @@ public class first {
         ObservableList<CustomerTable> observableList = FXCollections.observableArrayList();
         for (int i = 0; i < allCustomer.size(); i++) {
             String CID = String.valueOf(allCustomer.get(i).getCID());
-            CustomerTable customerTable = new CustomerTable(CID, allCustomer.get(i).getCNAme(), allCustomer.get(i).getCAddress(), allCustomer.get(i).getCMobile(), new JFXButton("update"), new JFXButton("delete"));
+            CustomerTable customerTable = new CustomerTable(CID, allCustomer.get(i).getCNAme(), allCustomer.get(i).getCAddress(), allCustomer.get(i).getCMobile(), new JFXButton("update"), new JFXButton("delete"),allCustomer.get(i).getCEmail());
             observableList.add(customerTable);
 
         }
@@ -135,6 +154,7 @@ public class first {
         tel.setCellValueFactory(new PropertyValueFactory<>("CMobile"));
         update.setCellValueFactory(new PropertyValueFactory<CustomerTable,JFXButton>("Update"));
         delete.setCellValueFactory(new PropertyValueFactory<CustomerTable,JFXButton>("Delete"));
+        email.setCellValueFactory(new PropertyValueFactory<>("CEmail"));
         loadValues();
     }
 

@@ -27,11 +27,12 @@ public class CustomerModel {
     public static boolean saveCustomer(CustomerDto customerDto){
         try {
             Connection connection= dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement =connection.prepareStatement("insert into customer values(?,?,?,?) ");
+            PreparedStatement preparedStatement =connection.prepareStatement("insert into customer values(?,?,?,?,?) ");
             preparedStatement.setInt(1,customerDto.getCID());
             preparedStatement.setString(2,customerDto.getCNAme());
             preparedStatement.setString(3,customerDto.getCAddress());
             preparedStatement.setString(4,customerDto.getCMobile());
+            preparedStatement.setString(5,customerDto.getCEmail());
 
             int i;
             i=preparedStatement.executeUpdate();
@@ -49,7 +50,7 @@ public class CustomerModel {
             ResultSet resultSet=preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                CustomerDto customerDto=new CustomerDto(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
+                CustomerDto customerDto=new CustomerDto(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5));
                 customerDtos.add(customerDto);
             }
         } catch (SQLException ex) {

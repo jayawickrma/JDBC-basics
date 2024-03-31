@@ -15,4 +15,5 @@ public class CustomerTable {
     private String CMobile;
     private JFXButton Update;
     private JFXButton Delete;
+    private String Email;
 }
