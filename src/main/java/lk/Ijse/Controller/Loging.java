@@ -24,7 +24,17 @@ public class Loging {
 
     @FXML
     private TextField username;
-
+    @FXML
+    void RegOnAction(ActionEvent event) throws IOException {
+        Parent parent =FXMLLoader.load(getClass().getResource("/View/Registrtion Page.fxml"));
+        Scene scene=new Scene(parent);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        stage.setTitle("New User Register Page");
+        stage.show();
+        Stage stage1=(Stage)username.getScene().getWindow();
+        stage1.close();
+    }
     @FXML
     void btnLogInAction(ActionEvent event) throws IOException {
     String uname="admin";
