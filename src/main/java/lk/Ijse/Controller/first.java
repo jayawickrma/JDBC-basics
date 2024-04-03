@@ -3,7 +3,7 @@ package lk.Ijse.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
-import java.sql.SQLException;
+
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,9 +31,7 @@ import lk.Ijse.DTO.TM.CustomerTable;
 import lk.Ijse.Model.CustomerModel;
 import lk.Ijse.SMTP.mail;
 
-import javax.imageio.IIOException;
 
-import static lk.Ijse.Model.CustomerModel.saveCustomer;
 
 public class first {
 
@@ -101,7 +100,6 @@ public class first {
         }
         setValues();
         loadValues();
-
         }
 
     public void loadValues() {
