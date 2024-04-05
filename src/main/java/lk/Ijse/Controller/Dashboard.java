@@ -23,21 +23,21 @@ public class Dashboard implements Initializable {
     @FXML
     private AnchorPane ancpane;
 
-    @FXML
-    void btnCustomerMange(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/View/1.fxml"));
-        ancpane.getChildren().setAll(parent);
-    }
-    @FXML
-    void btnHOMEMange(ActionEvent event) throws IOException {
-        Parent parent=FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
-        ancpane.getChildren().setAll(parent);
-    }
-    @FXML
-    void btnRoommanage(ActionEvent event) throws IOException {
-        Parent parent =FXMLLoader.load(getClass().getResource("/View/room.fxml"));
-        ancpane.getChildren().setAll(parent);
-    }
+//    @FXML
+//    void btnCustomerMange(ActionEvent event) throws IOException {
+//        Parent parent= FXMLLoader.load(getClass().getResource("/View/1.fxml"));
+//        ancpane.getChildren().setAll(parent);
+//    }
+//    @FXML
+//    void btnHOMEMange(ActionEvent event) throws IOException {
+//        Parent parent=FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
+//        ancpane.getChildren().setAll(parent);
+//    }
+//    @FXML
+//    void btnRoommanage(ActionEvent event) throws IOException {
+//        Parent parent =FXMLLoader.load(getClass().getResource("/View/room.fxml"));
+//        ancpane.getChildren().setAll(parent);
+//    }
 
     @FXML
     void initialize() {
@@ -55,5 +55,20 @@ public class Dashboard implements Initializable {
         }
         ancpane.getChildren().clear();
         ancpane.getChildren().add(root);
+    }
+
+    public void btnHOMEMange(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
+        ancpane.getChildren().setAll(parent);
+    }
+
+    public void btnRoommanage(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent parent =FXMLLoader.load(getClass().getResource("/View/room.fxml"));
+        ancpane.getChildren().setAll(parent);
+    }
+
+    public void btnCustomerMange(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent parent= FXMLLoader.load(getClass().getResource("/View/1.fxml"));
+        ancpane.getChildren().setAll(parent);
     }
 }
