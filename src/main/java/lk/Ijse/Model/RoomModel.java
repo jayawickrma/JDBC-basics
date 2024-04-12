@@ -43,6 +43,19 @@ public class RoomModel {
         }
     return false;
     }
+    public static boolean deleteRoom(int rId){
+        try{
+            Connection connection =dbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("delete from room where roomId =?");
+            preparedStatement.setInt(1,rId);
+
+            int i = preparedStatement.executeUpdate();
+            return i > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public static boolean updateRoom(RoomDto roomDto){
         try {
             Connection connection =dbConnection.getInstance().getConnection();

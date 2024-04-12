@@ -118,6 +118,7 @@ LoadValues();
                 stage.show();
                 LoadValues();
             });
+
         }
     }
         public void setvalues() {
