@@ -43,6 +43,13 @@ public class RegistrtionPage {
         }else{
             new Alert(Alert.AlertType.ERROR).show();
         }
+        idtxt.clear();
+        nametxt.clear();
+        pwtxt.clear();
+
+    }
+    @FXML
+    void CancelOnAction(ActionEvent event) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/View/loging.fxml"));
         Scene scene=new Scene(parent);
         Stage stage=new Stage();

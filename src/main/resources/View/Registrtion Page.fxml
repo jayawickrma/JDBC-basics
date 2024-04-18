@@ -21,6 +21,7 @@
             <Image url="@../Asserts/305639859_500015245470747_7619017191139213185_n%20(1).jpg" />
          </image>
       </ImageView>
-      <Button layoutX="308.0" layoutY="297.0" mnemonicParsing="false" onAction="#SaveOnAction" text="Save" />
+      <Button layoutX="335.0" layoutY="293.0" mnemonicParsing="false" onAction="#SaveOnAction" text="Save" />
+      <Button layoutX="277.0" layoutY="293.0" mnemonicParsing="false" onAction="#CancelOnAction" text="Cancel" />
    </children>
 </AnchorPane>

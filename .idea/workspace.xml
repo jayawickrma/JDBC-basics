@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c887bccf-90c3-421a-832e-8f9be98c5f4b" name="Changes" comment="dashboard error done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/Ijse/Controller/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/Ijse/Controller/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/Ijse/Controller/RegistrtionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/Ijse/Controller/RegistrtionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Registrtion Page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Registrtion Page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +116,8 @@
       <workItem from="1712852022129" duration="929000" />
       <workItem from="1712859377135" duration="1000" />
       <workItem from="1712937075192" duration="2159000" />
+      <workItem from="1713286109392" duration="971000" />
+      <workItem from="1713374852895" duration="1513000" />
     </task>
     <task id="LOCAL-00001" summary="loading on time">
       <created>1710685241225</created>
